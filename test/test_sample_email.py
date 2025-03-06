@@ -1,7 +1,13 @@
-from scr import sample as sml
-import pytest
-import io
 
+import sys
+import os
+import io
+# Add 'scr' folder to Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../scr')))
+
+import pytest
+
+import sample_email as sml
 
 def test_email_with_user_input_no_at_sign(monkeypatch):
     monkeypatch.setattr('sys.stdin', io.StringIO('bruce,wayne2wayneenterprises,com'))
